@@ -50,6 +50,17 @@ nav a {
 .founder {
     padding: 40px;
     text-align: center;
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
+    background: #fde7f2;
+    border-radius: 15px;
+}
+
+.founder-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #d06d8c;
 }
