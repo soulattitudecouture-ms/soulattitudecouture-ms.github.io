@@ -44,34 +44,19 @@ header nav a:hover {
 }
 
 /* ----------------------------- */
-/* HERO SECTION */
+/* HERO SECTIONS */
 /* ----------------------------- */
-.hero {
+.hero-bg {
+    background: linear-gradient(180deg, #fff0f5 0%, #fff 100%);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 90vh;
-    padding: 0 40px;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.1));
-}
-
-.hero-left, .hero-right {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-left img {
-    max-width: 90%;
-    height: auto;
-    border-radius: 15px;
-}
-
-.hero-right {
     flex-direction: column;
-    text-align: left;
-    padding-left: 40px;
+    align-items: center;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
 }
 
 .logo-hero {
@@ -205,35 +190,38 @@ header nav a:hover {
 }
 
 /* ----------------------------- */
-/* FOUNDER PAGE */
+/* FOUNDER / ABOUT PAGE */
 /* ----------------------------- */
-.founder-photo {
-    width: 260px;              
-    height: 260px;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center 25%; /* moves image up so head is visible */
-    margin-bottom: 20px;
-    border: 5px solid #d06d8c;
-}
-
 .founder-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
 }
 
+.founder-photo {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 25%;
+    margin-bottom: 30px;
+    border: 5px solid #d06d8c;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
 .founder-section h2 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #b44d6f;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .founder-section p {
-    max-width: 700px;
+    max-width: 750px;
+    font-size: 1.1rem;
     color: #555;
+    line-height: 1.7;
     margin-bottom: 20px;
 }
 
@@ -246,7 +234,6 @@ header nav a:hover {
     justify-content: center;
     gap: 50px;
     padding: 80px 40px;
-    background: #fff0f5; /* light pinkish background */
 }
 
 .contact-card {
@@ -304,23 +291,21 @@ header nav a:hover {
 }
 
 /* ----------------------------- */
+/* FADE-IN ANIMATION FOR HERO AND FOUNDER CONTENT */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+}
+
+.fade-in:nth-of-type(1) { animation-delay: 0.2s; }
+.fade-in:nth-of-type(2) { animation-delay: 0.4s; }
+.fade-in:nth-of-type(3) { animation-delay: 0.6s; }
+.fade-in:nth-of-type(4) { animation-delay: 0.8s; }
+
+/* ----------------------------- */
 /* RESPONSIVE */
 @media screen and (max-width: 1024px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-
-    .hero-left, .hero-right {
-        padding: 10px 0;
-    }
-
-    .hero-right {
-        text-align: center;
-        padding-left: 0;
-    }
-
     .highlight-grid {
         flex-direction: column;
         gap: 25px;
