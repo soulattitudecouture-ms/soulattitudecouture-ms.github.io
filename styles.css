@@ -62,16 +62,7 @@ nav a:hover {
 }
 
 /* ========================
-   Contact Page
-======================== */
-.contact-info {
-    padding: 40px;
-    font-size: 20px;
-    text-align: center;
-}
-
-/* ========================
-   Founder Page (Basic)
+   Founder Page (Basic + Parallax)
 ======================== */
 .founder {
     padding: 40px;
@@ -91,9 +82,6 @@ nav a:hover {
     border: 4px solid #d06d8c;
 }
 
-/* ========================
-   Founder Page (Parallax Upgrade)
-======================== */
 .founder-parallax {
     background: linear-gradient(to bottom, #fde7f2, #fce8f1);
     background-attachment: fixed;
@@ -119,7 +107,6 @@ nav a:hover {
     animation-delay: 0.2s;
 }
 
-/* Fade-in animation for founder card */
 @keyframes fadeIn {
     to {
         opacity: 1;
@@ -128,23 +115,21 @@ nav a:hover {
 }
 
 /* ========================
-   Responsive Design
+   Contact Page Styles
 ======================== */
-@media screen and (max-width: 768px) {
-    .gallery img {
-        width: 90%;
-    }
-    
-    .founder-card {
-        padding: 30px;
-    }
-
-    header {
-        padding: 15px;
-    }
-
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
+.contact-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 60px 20px;
+    background: #fde7f2;
 }
+
+.contact-card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 500px;
+    box-shado
