@@ -54,6 +54,8 @@ nav a {
     margin: auto;
     background: #fde7f2;
     border-radius: 15px;
+    background-image: url('assets/founder-bg.jpg');
+
 }
 
 .founder-photo {
@@ -64,3 +66,4 @@ nav a {
     margin-bottom: 20px;
     border: 4px solid #d06d8c;
 }
+
