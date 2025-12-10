@@ -153,14 +153,15 @@ nav a:hover {
 }
 
 .founder-photo {
-    width: 230px;
-    height: 230px;
+    width: 260px;              /* bigger circle */
+    height: 260px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center top; /* Ensures the head stays visible */
+    object-position: center 25%; /* moves image upward more */
     margin-bottom: 20px;
-    border: 4px solid #d06d8c;
+    border: 5px solid #d06d8c;
 }
+
 
 /* CONTACT PAGE */
 .contact-container {
@@ -212,3 +213,4 @@ nav a:hover {
         transform: translateY(0);
     }
 }
+
