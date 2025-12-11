@@ -208,7 +208,7 @@ header nav a:hover {
     height: 260px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center 25%;
+    object-position: center 20%;
     margin-bottom: 30px;
     border: 5px solid #d06d8c;
     box-shadow: 0 15px 30px rgba(0,0,0,0.1);
@@ -330,4 +330,5 @@ header nav a:hover {
         width: 100%;
     }
 }
+
 
