@@ -1,22 +1,22 @@
-/* GENERAL STYLES */
+/* RESET */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Arial, sans-serif;
     color: #333;
-    line-height: 1.6;
     background-color: #fff;
+    line-height: 1.6;
 }
 
 /* LINKS */
 a {
     text-decoration: none;
     color: inherit;
-    transition: color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 a:hover {
@@ -25,50 +25,48 @@ a:hover {
 
 /* HEADER */
 header {
+    padding: 20px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background-color: #fff;
+    background: #ffffff;
     border-bottom: 1px solid #eee;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 999;
 }
 
 header h1 {
+    color: #d88ca4;
     font-size: 24px;
     font-weight: 700;
-    color: #d88ca4;
 }
 
 nav a {
     margin-left: 25px;
-    font-weight: 500;
     font-size: 16px;
+    font-weight: 500;
 }
 
 /* HERO SECTION */
 .hero {
+    background-color: #fdf0f2;
+    height: 85vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 85vh;
-    background-color: #fdf0f2;
     text-align: center;
-    position: relative;
 }
 
 .hero-glass {
-    backdrop-filter: blur(5px);
     padding: 40px;
     border-radius: 15px;
 }
 
 .logo-hero {
-    width: 25vw;
-    max-width: 400px;
-    min-width: 200px;
+    width: 26vw;
+    max-width: 420px;
+    min-width: 220px;
     height: auto;
     margin-bottom: 35px;
 }
@@ -81,25 +79,25 @@ nav a {
 
 .hero-subtitle {
     font-size: 18px;
-    margin-bottom: 25px;
     color: #555;
+    margin-bottom: 25px;
 }
 
 .hero-btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 12px 32px;
     background-color: #d88ca4;
     color: #fff;
-    border-radius: 8px;
     font-weight: 600;
-    transition: background 0.3s ease;
+    border-radius: 8px;
+    transition: 0.3s ease;
 }
 
 .hero-btn:hover {
     background-color: #c4718f;
 }
 
-/* FEATURED SECTION */
+/* HIGHLIGHT SECTION */
 .highlight {
     padding: 80px 40px;
     text-align: center;
@@ -108,13 +106,12 @@ nav a {
 .highlight h2 {
     font-size: 32px;
     margin-bottom: 15px;
-    font-weight: 700;
 }
 
 .highlight p {
     font-size: 18px;
-    margin-bottom: 50px;
     color: #555;
+    margin-bottom: 50px;
 }
 
 .highlight-grid {
@@ -124,40 +121,34 @@ nav a {
 }
 
 .highlight-box {
-    background-color: #fdf0f2;
     padding: 30px;
     border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fdf0f2;
+    transition: 0.3s ease;
 }
 
 .highlight-box:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.12);
 }
 
 .highlight-box h3 {
     font-size: 22px;
-    margin-bottom: 10px;
     color: #d88ca4;
-}
-
-.highlight-box p {
-    font-size: 16px;
 }
 
 /* COLLECTION PAGE */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
     padding: 50px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
 }
 
 .item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
     background-color: #fdf0f2;
+    border-radius: 12px;
+    overflow: hidden;
     text-align: center;
     padding-bottom: 15px;
     animation: fadeIn 0.8s ease forwards;
@@ -166,67 +157,68 @@ nav a {
 .item img {
     width: 100%;
     border-radius: 12px;
-    display: block;
 }
 
 .item p {
     margin-top: 10px;
-    font-weight: 500;
+    font-size: 16px;
     color: #555;
+    font-weight: 500;
 }
 
-/* fade in animation for collection */
+/* COLLECTION ANIMATION */
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ABOUT PAGE */
+/* ABOUT PAGE — PERFECT CENTERED FIX */
 .about-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 60px 40px;
-    gap: 50px;
+    padding: 60px 20px;
+    max-width: 850px;
+    margin: auto;
     text-align: center;
 }
 
 .about-image {
-    flex: 1 1 300px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
 }
 
 .about-image img {
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
     object-fit: cover;
-    border-radius: 50%; /* circular crop */
+    object-position: center top; /* SHOWS FULL HEAD */
+    border: 5px solid #fdf0f2;
 }
 
 .about-text {
-    flex: 1 1 400px;
+    margin-top: 10px;
 }
 
 .about-text h2 {
     font-size: 32px;
     margin-bottom: 15px;
-    color: #333;
 }
 
 .about-text p {
     font-size: 18px;
+    margin-bottom: 18px;
     color: #555;
     line-height: 1.8;
 }
 
 /* CONTACT PAGE */
 .contact-section {
+    padding: 60px 40px;
     display: flex;
     flex-wrap: wrap;
+    gap: 40px;
     justify-content: center;
     align-items: flex-start;
-    padding: 60px 40px;
-    gap: 40px;
 }
 
 .contact-card {
@@ -234,22 +226,17 @@ nav a {
     background-color: #fdf0f2;
     padding: 40px;
     border-radius: 15px;
-    text-align: left;
 }
 
 .contact-card h2 {
     font-size: 28px;
-    margin-bottom: 15px;
     color: #d88ca4;
+    margin-bottom: 15px;
 }
 
 .contact-card p {
     font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .contact-info a {
@@ -257,45 +244,22 @@ nav a {
     font-weight: 600;
 }
 
-.contact-info a:hover {
-    color: #c4718f;
-}
-
-.contact-image {
-    flex: 1 1 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .contact-image img {
     max-width: 100%;
     border-radius: 15px;
 }
 
-/* MEDIA QUERIES */
-@media screen and (max-width: 768px) {
-    .hero-title {
-        font-size: 28px;
-    }
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-title { font-size: 28px; }
+    .hero-subtitle { font-size: 16px; }
 
-    .hero-subtitle {
-        font-size: 16px;
-    }
-
-    .highlight h2 {
-        font-size: 28px;
-    }
-
-    .highlight p {
-        font-size: 16px;
-    }
-
-    .about-section {
-        flex-direction: column;
+    .about-image img {
+        width: 220px;
+        height: 220px;
     }
 
     .contact-section {
-        flex-direction: column;
+        padding: 40px 20px;
     }
 }
