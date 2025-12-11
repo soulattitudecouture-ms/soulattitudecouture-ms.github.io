@@ -60,10 +60,13 @@ header nav a:hover {
 }
 
 .logo-hero {
-    width: 180px;
+    width: 22vw;        /* 22% of viewport width */
+    max-width: 350px;   /* won’t get too big on large screens */
+    min-width: 180px;   /* won’t shrink too much on small screens */
     height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
+
 
 .hero-title {
     font-size: 2.6rem;
@@ -327,3 +330,4 @@ header nav a:hover {
         width: 100%;
     }
 }
+
