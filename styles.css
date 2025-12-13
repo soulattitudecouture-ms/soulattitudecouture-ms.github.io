@@ -1,5 +1,5 @@
 /* ==================================================
-   GLOBAL
+   GLOBAL RESET & BASE
 ================================================== */
 * {
     box-sizing: border-box;
@@ -13,7 +13,7 @@ body {
 }
 
 /* ==================================================
-   HEADER / NAV
+   HEADER / NAVIGATION
 ================================================== */
 header {
     display: flex;
@@ -39,8 +39,23 @@ header nav a:hover {
     color: #e91e63;
 }
 
+/* Mobile nav spacing (necessary fix) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 10px;
+    }
+}
+
 /* ==================================================
-   HOME / HERO
+   HOME / HERO SECTION
 ================================================== */
 .hero {
     min-height: 80vh;
@@ -52,7 +67,7 @@ header nav a:hover {
 }
 
 .hero-glass {
-    background: rgba(255,255,255,0.65);
+    background: rgba(255, 255, 255, 0.65);
     padding: 40px;
     border-radius: 20px;
     backdrop-filter: blur(10px);
@@ -84,7 +99,7 @@ header nav a:hover {
 }
 
 /* ==================================================
-   HIGHLIGHT SECTION (HOME)
+   HOME – HIGHLIGHT SECTION
 ================================================== */
 .highlight {
     text-align: center;
@@ -92,11 +107,11 @@ header nav a:hover {
 }
 
 .highlight-grid {
+    max-width: 1000px;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
-    max-width: 1000px;
-    margin: auto;
 }
 
 .highlight-box {
@@ -107,7 +122,7 @@ header nav a:hover {
 }
 
 /* ==================================================
-   ABOUT PAGE
+   ABOUT PAGE (RESTORED)
 ================================================== */
 .about-section {
     padding: 60px 20px;
@@ -121,6 +136,11 @@ header nav a:hover {
     object-fit: cover;
     object-position: center top;
     margin-bottom: 20px;
+}
+
+.about-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
 }
 
 .about-section p {
@@ -150,17 +170,32 @@ header nav a:hover {
     box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
 
+.contact-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    color: #555;
+}
+
 .contact-image img {
     max-width: 400px;
     border-radius: 15px;
 }
 
 /* ==================================================
-   COLLECTION PAGE (SMALL THUMBNAILS)
+   COLLECTION PAGE (ISOLATED & CLEAN)
+   Uses ONLY collection-clean classes
 ================================================== */
 .collection-clean {
     padding: 40px 20px 60px;
     text-align: center;
+}
+
+.collection-clean h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
 }
 
 .collection-clean-grid {
@@ -173,12 +208,18 @@ header nav a:hover {
 
 .collection-clean-card {
     height: 140px;
+    position: relative;
     border-radius: 10px;
     overflow: hidden;
-    position: relative;
-    text-decoration: none;
     background: #fff;
+    text-decoration: none;
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.collection-clean-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
 
 .collection-clean-card img {
@@ -229,18 +270,4 @@ header nav a:hover {
 .product-item p {
     margin-top: 10px;
     font-size: 0.9rem;
-}
-
-/* ==================================================
-   RESPONSIVE
-================================================== */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .collection-clean-card {
-        height: 120px;
-    }
 }
