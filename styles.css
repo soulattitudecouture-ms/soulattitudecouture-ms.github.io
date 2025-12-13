@@ -1,16 +1,17 @@
 /* =========================
-   GENERAL STYLES
+   GLOBAL STYLES
 ========================= */
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f9e6eb; /* GLOBAL pink background */
+    font-family: Arial, sans-serif;
+    background-color: #f9e6eb;
     color: #333;
 }
 
+/* =========================
+   HEADER
+========================= */
 header {
-    background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -18,8 +19,9 @@ header {
 }
 
 header h1 {
+    margin: 0;
     font-size: 1.5rem;
-    color: #e91e63; /* Brand pink */
+    color: #e91e63;
 }
 
 header nav a {
@@ -27,7 +29,6 @@ header nav a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    transition: color 0.3s;
 }
 
 header nav a:hover {
@@ -35,108 +36,90 @@ header nav a:hover {
 }
 
 /* =========================
-   HERO / HOME PAGE
+   COLLECTION PAGE
 ========================= */
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 80vh;
+.collection-section {
+    padding: 40px 20px 60px;
     text-align: center;
-    padding: 50px 20px;
 }
 
-.hero-glass {
-    background: rgba(255, 255, 255, 0.65);
-    padding: 40px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
+.collection-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
 }
 
-.logo-hero {
-    width: 220px;
-    margin-bottom: 20px;
-}
-
-/* =========================
-   COLLECTION PAGE (THUMBNAILS – REFINED)
-========================= */
-
-.categories {
-    padding: 50px 20px;
-}
-
-.category-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 24px;
+.collection-grid {
     max-width: 1100px;
     margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 22px;
 }
 
-.category-card {
+/* Individual category card */
+.collection-card {
     position: relative;
-    border-radius: 14px;
+    height: 160px;
+    border-radius: 12px;
     overflow: hidden;
-    height: 180px; /* REDUCED SIZE */
     text-decoration: none;
-    background: #fff;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.category-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+.collection-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.22);
 }
 
-.category-card img {
+.collection-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-/* Label overlay */
-.category-card span {
+/* Category label */
+.collection-card span {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 10px 0;
-    background: rgba(0,0,0,0.45);
+    padding: 8px 0;
+    background: rgba(0,0,0,0.55);
     color: #fff;
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.85rem;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
 
-
 /* =========================
-   CATEGORY PRODUCT GRIDS
+   PRODUCT CATEGORY PAGES
 ========================= */
 .category-products {
-    padding: 60px 20px;
+    padding: 50px 20px;
 }
 
 .product-grid {
+    max-width: 1200px;
+    margin: auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
-    max-width: 1200px;
-    margin: auto;
+}
+
+.product-item {
+    text-align: center;
 }
 
 .product-item img {
     width: 100%;
-    height: 320px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 15px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 .product-item p {
-    margin-top: 12px;
+    margin-top: 10px;
     font-size: 0.9rem;
 }
 
@@ -149,8 +132,7 @@ header nav a:hover {
         align-items: flex-start;
     }
 
-    .category-card {
-        height: 220px;
+    .collection-card {
+        height: 140px;
     }
 }
-
