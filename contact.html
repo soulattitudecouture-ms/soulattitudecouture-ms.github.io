@@ -23,18 +23,41 @@
         <h2>Get in Touch</h2>
 
         <p>
-            We’d love to hear from you! Reach out to us via WhatsApp or email for 
-            inquiries, custom outfits, appointments, or orders.
+            We’d love to hear from you! Reach out to us via WhatsApp, Instagram,
+            or email for inquiries, custom outfits, appointments, or orders.
         </p>
 
+        <!-- CONTACT FORM -->
+        <form class="contact-form"
+              action="https://formspree.io/f/mqarnndv"
+              method="POST">
+
+            <input type="hidden" name="_subject" value="New inquiry — Soul Attitude Couture">
+
+            <input type="text" name="name" placeholder="Name" required>
+
+            <input type="email" name="email" placeholder="Email" required>
+
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+
+        <!-- DIRECT CONTACT INFO -->
         <div class="contact-info">
             <p><strong>WhatsApp:</strong> 
-                <a href="https://wa.me/919820050419">9820050419</a>
+                <a href="https://wa.me/919820050419" target="_blank">9820050419</a>
             </p>
 
             <p><strong>Email:</strong> 
                 <a href="mailto:soulattitudecouture@gmail.com">
                     soulattitudecouture@gmail.com
+                </a>
+            </p>
+
+            <p><strong>Instagram:</strong>
+                <a href="https://instagram.com/soulattitude_couture" target="_blank">
+                    @soulattitude_couture
                 </a>
             </p>
         </div>
