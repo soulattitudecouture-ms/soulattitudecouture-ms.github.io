@@ -21,52 +21,115 @@
     <div class="product-grid">
 
         <div class="product-item">
-            <img src="assets/coord-set/PINSTRIPE CO-ORD SET.jpg" alt="PINSTRIPE CO-ORD SET">
+            <img src="assets/coord-set/PINSTRIPE CO-ORD SET.jpg"
+                 alt="PINSTRIPE CO-ORD SET"
+                 class="lightbox-trigger"
+                 data-full="assets/coord-set/PINSTRIPE CO-ORD SET.jpg">
             <p>PINSTRIPE CO-ORD SET</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/coord-set/SKY BLUE COORD SET.jpg" alt="SKY BLUE COORD SET">
+            <img src="assets/coord-set/SKY BLUE COORD SET.jpg"
+                 alt="SKY BLUE COORD SET"
+                 class="lightbox-trigger"
+                 data-full="assets/coord-set/SKY BLUE COORD SET.jpg">
             <p>SKY BLUE COORD SET</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/coord-set/WINE MULTI STRIPE COORD SET.jpg" alt="WINE MULTI STRIPE COORD SET">
+            <img src="assets/coord-set/WINE MULTI STRIPE COORD SET.jpg"
+                 alt="WINE MULTI STRIPE COORD SET"
+                 class="lightbox-trigger"
+                 data-full="assets/coord-set/WINE MULTI STRIPE COORD SET.jpg">
             <p>WINE MULTI STRIPE COORD SET</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/coord-set/BABY PINK FLORAL COORD SET.jpg" alt="BABY PINK FLORAL COORD SET">
+            <img src="assets/coord-set/BABY PINK FLORAL COORD SET.jpg"
+                 alt="BABY PINK FLORAL COORD SET"
+                 class="lightbox-trigger"
+                 data-full="assets/coord-set/BABY PINK FLORAL COORD SET.jpg">
             <p>BABY PINK FLORAL COORD SET</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/coord-set/FLORAL CO-ORD SET.jpg" alt="FLORAL CO-ORD SET">
+            <img src="assets/coord-set/FLORAL CO-ORD SET.jpg"
+                 alt="FLORAL CO-ORD SET"
+                 class="lightbox-trigger"
+                 data-full="assets/coord-set/FLORAL CO-ORD SET.jpg">
             <p>FLORAL CO-ORD SET</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/coord-set/GREEN PRINTED COORD SET.jpg" alt="GREEN PRINTED COORD SET">
+            <img src="assets/coord-set/GREEN PRINTED COORD SET.jpg"
+                 alt="GREEN PRINTED COORD SET"
+                 class="lightbox-trigger"
+                 data-full="assets/coord-set/GREEN PRINTED COORD SET.jpg">
             <p>GREEN PRINTED COORD SET</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/coord-set/MUSTARD YELLOW CO-ORD SET.jpg" alt="MUSTARD YELLOW CO-ORD SET">
+            <img src="assets/coord-set/MUSTARD YELLOW CO-ORD SET.jpg"
+                 alt="MUSTARD YELLOW CO-ORD SET"
+                 class="lightbox-trigger"
+                 data-full="assets/coord-set/MUSTARD YELLOW CO-ORD SET.jpg">
             <p>MUSTARD YELLOW CO-ORD SET</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/coord-set/PEACH PRINTED COORD DET.jpg" alt="PEACH PRINTED COORD DET">
+            <img src="assets/coord-set/PEACH PRINTED COORD DET.jpg"
+                 alt="PEACH PRINTED COORD DET"
+                 class="lightbox-trigger"
+                 data-full="assets/coord-set/PEACH PRINTED COORD DET.jpg">
             <p>PEACH PRINTED COORD DET</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/coord-set/PINK THAI SILK CO-ORD SET.jpg" alt="PINK THAI SILK CO-ORD SET">
+            <img src="assets/coord-set/PINK THAI SILK CO-ORD SET.jpg"
+                 alt="PINK THAI SILK CO-ORD SET"
+                 class="lightbox-trigger"
+                 data-full="assets/coord-set/PINK THAI SILK CO-ORD SET.jpg">
             <p>PINK THAI SILK CO-ORD SET</p>
         </div>
 
     </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" alt="Expanded view">
+</div>
+
+<script>
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    triggers.forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.dataset.full;
+            lightbox.style.display = 'flex';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            lightbox.style.display = 'none';
+        }
+    });
+</script>
 
 </body>
 </html>
