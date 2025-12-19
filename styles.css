@@ -280,4 +280,26 @@ header nav a:hover {
     font-size: 0.9rem;
 }
 
+/* ==================================================
+   COLLECTION PAGE – CATEGORY LABELS (NEW)
+================================================== */
+
+.collection-item {
+    text-align: center;
+}
+
+.collection-label {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333;
+}
+
+/* Optional: subtle hover polish */
+.collection-item:hover .collection-label {
+    color: #e91e63;
+}
+
 
