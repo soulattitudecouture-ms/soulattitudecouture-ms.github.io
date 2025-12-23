@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const triggers = Array.from(document.querySelectorAll('.lightbox-trigger'));
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const caption = document.getElementById('lightbox-caption');
     const closeBtn = document.querySelector('.lightbox-close');
     const prevBtn = document.querySelector('.lightbox-nav.prev');
     const nextBtn = document.querySelector('.lightbox-nav.next');
@@ -12,7 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showImage(index) {
         currentIndex = (index + triggers.length) % triggers.length;
-        lightboxImg.src = triggers[currentIndex].src;
+        const img = triggers[currentIndex];
+        lightboxImg.src = img.src;
+        caption.textContent = img.alt || '';
     }
 
     triggers.forEach((img, index) => {
@@ -26,13 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
         lightbox.style.display = 'none';
     });
 
-    prevBtn.addEventListener('click', () => {
-        showImage(currentIndex - 1);
-    });
-
-    nextBtn.addEventListener('click', () => {
-        showImage(currentIndex + 1);
-    });
+    prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
+    nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
 
     lightbox.addEventListener('click', e => {
         if (e.target === lightbox) {
@@ -42,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('keydown', e => {
         if (lightbox.style.display !== 'flex') return;
-
         if (e.key === 'Escape') lightbox.style.display = 'none';
         if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
         if (e.key === 'ArrowRight') showImage(currentIndex + 1);
