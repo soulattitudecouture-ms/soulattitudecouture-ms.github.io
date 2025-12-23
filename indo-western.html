@@ -21,72 +21,134 @@
     <div class="product-grid">
 
         <div class="product-item">
-            <img src="assets/indo-western/ABLA CAPE BROZE PLEATED GOWN.jpg" alt="ABLA CAPE BROZE PLEATED GOWN" loading="lazy">
+            <img src="assets/indo-western/ABLA CAPE BROZE PLEATED GOWN.jpg"
+                 alt="ABLA CAPE BROZE PLEATED GOWN"
+                 class="lightbox-trigger">
             <p>ABLA CAPE BROZE PLEATED GOWN</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/BLUE PRINTED ORGENZA TUNIC.jpg" alt="BLUE PRINTED ORGENZA TUNIC" loading="lazy">
+            <img src="assets/indo-western/BLUE PRINTED ORGENZA TUNIC.jpg"
+                 alt="BLUE PRINTED ORGENZA TUNIC"
+                 class="lightbox-trigger">
             <p>BLUE PRINTED ORGENZA TUNIC</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/FLORAL PRINT CHIFFON TUNIC.jpg" alt="FLORAL PRINT CHIFFON TUNIC" loading="lazy">
+            <img src="assets/indo-western/FLORAL PRINT CHIFFON TUNIC.jpg"
+                 alt="FLORAL PRINT CHIFFON TUNIC"
+                 class="lightbox-trigger">
             <p>FLORAL PRINT CHIFFON TUNIC</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/OMBRE CHEETAH SELF PRINT TUNIC.jpg" alt="OMBRE CHEETAH SELF PRINT TUNIC" loading="lazy">
+            <img src="assets/indo-western/OMBRE CHEETAH SELF PRINT TUNIC.jpg"
+                 alt="OMBRE CHEETAH SELF PRINT TUNIC"
+                 class="lightbox-trigger">
             <p>OMBRE CHEETAH SELF PRINT TUNIC</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/OMBRE GOWN WITH ABLA CAPE.jpg" alt="OMBRE GOWN WITH ABLA CAPE" loading="lazy">
+            <img src="assets/indo-western/OMBRE GOWN WITH ABLA CAPE.jpg"
+                 alt="OMBRE GOWN WITH ABLA CAPE"
+                 class="lightbox-trigger">
             <p>OMBRE GOWN WITH ABLA CAPE</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/ORGENZA TUNIC.jpg" alt="ORGENZA TUNIC" loading="lazy">
+            <img src="assets/indo-western/ORGENZA TUNIC.jpg"
+                 alt="ORGENZA TUNIC"
+                 class="lightbox-trigger">
             <p>ORGENZA TUNIC</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/PEACH TURKISH JACKET WITH GOWN.jpeg" alt="PEACH TURKISH JACKET WITH GOWN" loading="lazy">
+            <img src="assets/indo-western/PEACH TURKISH JACKET WITH GOWN.jpeg"
+                 alt="PEACH TURKISH JACKET WITH GOWN"
+                 class="lightbox-trigger">
             <p>PEACH TURKISH JACKET WITH GOWN</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/PINK SHARA WITH SEQUENSED BLOUSE AND CAPE.jpg" alt="PINK SHARA WITH SEQUENSED BLOUSE AND CAPE" loading="lazy">
+            <img src="assets/indo-western/PINK SHARA WITH SEQUENSED BLOUSE AND CAPE.jpg"
+                 alt="PINK SHARA WITH SEQUENSED BLOUSE AND CAPE"
+                 class="lightbox-trigger">
             <p>PINK SHARA WITH SEQUENSED BLOUSE AND CAPE</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/PLEATED DRESS MIRROR WORK CAPE.jpeg" alt="PLEATED DRESS MIRROR WORK CAPE" loading="lazy">
+            <img src="assets/indo-western/PLEATED DRESS MIRROR WORK CAPE.jpeg"
+                 alt="PLEATED DRESS MIRROR WORK CAPE"
+                 class="lightbox-trigger">
             <p>PLEATED DRESS MIRROR WORK CAPE</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/RED PLEATED DRESS WITH ABLA CAPE.jpg" alt="RED PLEATED DRESS WITH ABLA CAPE" loading="lazy">
+            <img src="assets/indo-western/RED PLEATED DRESS WITH ABLA CAPE.jpg"
+                 alt="RED PLEATED DRESS WITH ABLA CAPE"
+                 class="lightbox-trigger">
             <p>RED PLEATED DRESS WITH ABLA CAPE</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/SHADED INDO WESTERN TUNIC SET.jpg" alt="SHADED INDO WESTERN TUNIC SET" loading="lazy">
+            <img src="assets/indo-western/SHADED INDO WESTERN TUNIC SET.jpg"
+                 alt="SHADED INDO WESTERN TUNIC SET"
+                 class="lightbox-trigger">
             <p>SHADED INDO WESTERN TUNIC SET</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/SHADED SEQUENCE TUNIC.jpg" alt="SHADED SEQUENCE TUNIC" loading="lazy">
+            <img src="assets/indo-western/SHADED SEQUENCE TUNIC.jpg"
+                 alt="SHADED SEQUENCE TUNIC"
+                 class="lightbox-trigger">
             <p>SHADED SEQUENCE TUNIC</p>
         </div>
 
         <div class="product-item">
-            <img src="assets/indo-western/YELLOW JACKET WITH PLEATED EMERALD DRESS.jpg" alt="YELLOW JACKET WITH PLEATED EMERALD DRESS" loading="lazy">
+            <img src="assets/indo-western/YELLOW JACKET WITH PLEATED EMERALD DRESS.jpg"
+                 alt="YELLOW JACKET WITH PLEATED EMERALD DRESS"
+                 class="lightbox-trigger">
             <p>YELLOW JACKET WITH PLEATED EMERALD DRESS</p>
         </div>
 
     </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" alt="Expanded view">
+</div>
+
+<script>
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+
+    triggers.forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.style.display = 'flex';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', e => {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+        }
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') {
+            lightbox.style.display = 'none';
+        }
+    });
+</script>
 
 </body>
 </html>
