@@ -320,7 +320,7 @@ header nav a:hover {
 
 .lightbox img {
     max-width: 90vw;
-    max-height: 80vh;   /* KEY FIX */
+    max-height: 75vh;   /* KEY FIX */
     width: auto;
     height: auto;
     object-fit: contain;
@@ -406,24 +406,26 @@ header nav a:hover {
 
 .lightbox-content {
     position: relative;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+
 .lightbox-caption {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 14px 20px;
-    background: linear-gradient(
-        to top,
-        rgba(0,0,0,0.65),
-        rgba(0,0,0,0)
-    );
+    margin-top: 12px;
+    padding: 10px 16px;
+    background: rgba(0,0,0,0.65);
     color: #fff;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: center;
+    border-radius: 8px;
 }
+
+
 
 
 
