@@ -319,11 +319,15 @@ header nav a:hover {
 }
 
 .lightbox img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 90vw;
+    max-height: 80vh;   /* KEY FIX */
+    width: auto;
+    height: auto;
+    object-fit: contain;
     border-radius: 10px;
     transition: opacity 0.25s ease;
 }
+
 
 .lightbox-close {
     position: absolute;
@@ -420,6 +424,7 @@ header nav a:hover {
     text-transform: uppercase;
     text-align: center;
 }
+
 
 
 
