@@ -279,7 +279,40 @@ header nav a:hover {
 .product-item p {
     margin-top: 10px;
     font-size: 0.9rem;
+   text-align: center;
+    position: relative;
 }
+
+/* ==================================================
+   PRODUCT ZOOM INDICATOR
+================================================== */
+
+.product-item::after {
+    content: "🔍";
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    font-size: 18px;
+    background: rgba(255,255,255,0.9);
+    color: #333;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.product-item:hover::after {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+
+
 
 /* ==================================================
    COLLECTION PAGE – CATEGORY LABELS (NEW)
@@ -424,6 +457,7 @@ header nav a:hover {
     text-align: center;
     border-radius: 8px;
 }
+
 
 
 
