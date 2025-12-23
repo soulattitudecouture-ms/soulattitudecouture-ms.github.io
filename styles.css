@@ -396,6 +396,31 @@ header nav a:hover {
 }
 
 
+/* ==================================================
+   LIGHTBOX CAPTION – EDITORIAL STYLE
+================================================== */
+
+.lightbox-content {
+    position: relative;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.65),
+        rgba(0,0,0,0)
+    );
+    color: #fff;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
 
 
 
