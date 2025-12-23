@@ -349,5 +349,35 @@ header nav a:hover {
     margin-top: 4px;
 }
 
+/* ==================================================
+   LIGHTBOX NAVIGATION ARROWS
+================================================== */
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    border: none;
+    color: #fff;
+    font-size: 40px;
+    padding: 10px 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.lightbox-nav.prev {
+    left: 30px;
+}
+
+.lightbox-nav.next {
+    right: 30px;
+}
+
+.lightbox-nav:hover {
+    background: rgba(0,0,0,0.6);
+}
+
 
 
