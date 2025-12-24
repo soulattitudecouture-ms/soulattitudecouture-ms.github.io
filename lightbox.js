@@ -1,47 +1,65 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const triggers = Array.from(document.querySelectorAll('.lightbox-trigger'));
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const caption = document.getElementById('lightbox-caption');
-    const closeBtn = document.querySelector('.lightbox-close');
-    const prevBtn = document.querySelector('.lightbox-nav.prev');
-    const nextBtn = document.querySelector('.lightbox-nav.next');
+document.addEventListener("DOMContentLoaded", () => {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const caption = document.getElementById("lightbox-caption");
+    const closeBtn = document.querySelector(".lightbox-close");
+    const prevBtn = document.querySelector(".lightbox-nav.prev");
+    const nextBtn = document.querySelector(".lightbox-nav.next");
 
-    if (!triggers.length || !lightbox) return;
-
+    // Select ALL product images automatically
+    const images = Array.from(document.querySelectorAll(".product-item img"));
     let currentIndex = 0;
 
-    function showImage(index) {
-        currentIndex = (index + triggers.length) % triggers.length;
-        const img = triggers[currentIndex];
+    if (!images.length) return;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        const img = images[currentIndex];
+
         lightboxImg.src = img.src;
-        caption.textContent = img.alt || '';
+        caption.textContent = img.alt || "";
+        lightbox.style.display = "flex";
+        document.body.style.overflow = "hidden";
     }
 
-    triggers.forEach((img, index) => {
-        img.addEventListener('click', () => {
-            showImage(index);
-            lightbox.style.display = 'flex';
-        });
+    function closeLightbox() {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+        document.body.style.overflow = "";
+    }
+
+    function showNext() {
+        currentIndex = (currentIndex + 1) % images.length;
+        openLightbox(currentIndex);
+    }
+
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        openLightbox(currentIndex);
+    }
+
+    // Click on image → open
+    images.forEach((img, index) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => openLightbox(index));
     });
 
-    closeBtn.addEventListener('click', () => {
-        lightbox.style.display = 'none';
+    // Controls
+    closeBtn.addEventListener("click", closeLightbox);
+    nextBtn.addEventListener("click", showNext);
+    prevBtn.addEventListener("click", showPrev);
+
+    // Close on backdrop click
+    lightbox.addEventListener("click", e => {
+        if (e.target === lightbox) closeLightbox();
     });
 
-    prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
-    nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+    // Keyboard support
+    document.addEventListener("keydown", e => {
+        if (lightbox.style.display !== "flex") return;
 
-    lightbox.addEventListener('click', e => {
-        if (e.target === lightbox) {
-            lightbox.style.display = 'none';
-        }
-    });
-
-    document.addEventListener('keydown', e => {
-        if (lightbox.style.display !== 'flex') return;
-        if (e.key === 'Escape') lightbox.style.display = 'none';
-        if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
-        if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowRight") showNext();
+        if (e.key === "ArrowLeft") showPrev();
     });
 });
