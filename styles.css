@@ -461,17 +461,20 @@ header nav a:hover {
 /*back to collection*/
 
 .back-to-collection {
-    display: inline-block;
-    margin: 20px 40px 10px;
+    display: block;
+    padding: 0 40px;
+    margin: 20px 0 30px;
     font-size: 0.9rem;
     font-weight: 500;
     color: #e91e63;
     text-decoration: none;
 }
 
+
 .back-to-collection:hover {
     text-decoration: underline;
 }
+
 
 
 
