@@ -489,6 +489,16 @@ header nav a:hover {
     color: #666;
 }
 
+.about-trust {
+    margin: 30px auto;
+    font-size: 0.9rem;
+    color: #555;
+    max-width: 700px;
+}
+.about-trust p {
+    margin: 6px 0;
+}
+
 
 
 
